@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Register from './components/user/Register';
+import Homepage from './components/homepage/Homepage';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import NewGame from './components/game/NewGame';
+import Highscore from './components/game/Highscore';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+    render() {
+        return (
+            <Router>
+                <div id="body-container">
+                    <div id="game">
+                        <div id="game-inner-wrapper">
+                            <h1 className="game-title">Bulls and Cows</h1>
+                            <Switch>
+                                <Route path="/" exact render={() => <Homepage />} />
+                                <Route path="/new-game" exact render={() => <NewGame />} />
+                                <Route path="/highscore" exact render={() => <Highscore />} />
+                                <Route path="/register" exact render={() => <Register />} />
+                            </Switch>
+                        </div>
+                    </div>
+                </div>
+            </Router >
+        )
+    }
 }
 
 export default App;

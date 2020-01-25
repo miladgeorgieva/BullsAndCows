@@ -1,0 +1,28 @@
+.custom-input-group {
+  flex-direction: column;
+
+  label {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.custom-form-control {
+  border-width: 0px 0px 1px 0px;
+  border-color: black;
+  border-radius: 0;
+  background-color: transparent;
+  font-size: 14px;
+  color: $primary-text-color;
+
+  &::placeholder {
+    color: rgb(71, 71, 71);
+    opacity: 1; /* Firefox */
+  }
+}
+
+.form-control:focus,
+.form-control:active {
+  background-color: transparent;
+  color: $primary-text-color;
+}

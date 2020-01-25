@@ -1,0 +1,29 @@
+.btn {
+  &.primary-button {
+    background-color: rgb(20, 129, 147);
+    border: 0 none;
+    border-radius: 40px;
+    padding: 20px 60px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+
+    &.new-game {
+      background-color: rgb(213, 167, 0);
+      margin: 10px;
+    }
+
+    &.top-scores {
+      background-color: rgb(12, 202, 115);
+      margin: 10px;
+    }
+  }
+
+  &.secondary-button {
+    background-color: rgb(20, 129, 147);
+    border: 0 none;
+    border-radius: 40px;
+    padding: 10px 30px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+  }
+}
