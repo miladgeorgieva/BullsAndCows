@@ -1,36 +1,57 @@
 import React from 'react';
+import Form from './Form';
+import ResultsBox from './ResultsBox';
 
 class NewGame extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: '' };
 
-    this.handleChange = this.handleChange.bind(this);
+    this.state = {
+      inputValue: '',
+      playerResults: [],
+      // isFormSubmitted: false
+    };
+
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
-    this.setState({ value: event.target.value });
+    this.setState({
+      inputValue: event.target.value,
+      // isFormSubmitted: false
+    });
   }
 
   handleSubmit(event) {
-    alert('A 4-digit number was submitted: ' + this.state.value);
     event.preventDefault();
+    // console.log(this.state.playerResults)
+
+    // TODO
+    const turn = {
+      number: this.state.inputValue,
+      cows: 0,
+      bulls: 0
+    }
+
+    const playerResults = [...this.state.playerResults, turn];
+
+    this.setState({
+      // isFormSubmitted: true,
+      playerResults: playerResults
+    })
+
+    // console.log(this.state.playerResults)
   }
 
   render() {
     return (
       <div id="new-game-holder">
-        <form onSubmit={this.handleSubmit}>
-          <div className="input-group custom-input-group">
-            <label htmlFor="chosen_number">Write down a 4-digit number:</label>
-            <input type="text" className="form-control custom-form-control mb-4" name="chosen_number" autoComplete="off" placeholder="Your number here..." />
-          </div>
-
-          <input type="submit" value="Submit number" className="btn secondary-button" />
-        </form>
+        <Form inputValue={this.state.inputValue} handleChange={this.handleChange} handleSubmit={this.handleSubmit} />
+        {this.state.playerResults.length > 0 && <ResultsBox playerResults={this.state.playerResults} />}
       </div>
     );
   }
 }
+
 export default NewGame;
