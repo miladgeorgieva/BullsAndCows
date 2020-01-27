@@ -1,8 +1,6 @@
 import React from 'react';
 
 const Form = (props) => {
-    // console.log(props);
-
     return (
         <form onSubmit={props.handleSubmit}>
             <div className="input-group custom-input-group">
@@ -11,8 +9,14 @@ const Form = (props) => {
             </div>
 
             <div className="buttons">
-                <button className="btn secondary-button">Submit number</button>
-                <button className="btn secondary-button joker">Give me a joker</button>
+                <button className={"btn secondary-button" +
+                    (props.inputValueArray.length !== 4 || !props.currentInputIsNumber ? " disabled" : '')}
+                    disabled={props.inputValueArray.length !== 4 || !props.currentInputIsNumber}>
+                    Submit number
+                    </button>
+                <button className={"btn secondary-button joker" +
+                    (props.jokerBtnIsDisabled ? " disabled" : '')}
+                    disabled={props.jokerBtnIsDisabled} onClick={props.onJokerClick}>Give me a joker</button>
                 <button className="btn secondary-button give-up">I give up</button>
             </div>
         </form>

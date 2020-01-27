@@ -40,4 +40,8 @@
       background-color: rgb(188, 25, 25);
     }
   }
+
+  &.disabled {
+    cursor: not-allowed;
+  }
 }

@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import Register from './components/user/Register';
 import Homepage from './components/homepage/Homepage';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import NewGame from './components/game/NewGame';
 import Highscore from './components/game/Highscore';
 
@@ -22,6 +23,7 @@ class App extends Component {
                         </div>
                     </div>
                 </div>
+                <ToastContainer />
             </Router >
         )
     }

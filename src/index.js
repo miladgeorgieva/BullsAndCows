@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import './assets/styles/style.scss';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 // import * as serviceWorker from './serviceWorker';
 
