@@ -48,14 +48,14 @@ class App extends Component {
                                 <h1 className="game-title">Bulls and Cows</h1>
                                 {localStorage.getItem('isAuthenticated') === 'true' && this.props.location.pathname === "/" &&
                                     <h2 className="title title-home-page">Hello, {localStorage.getItem('username')}</h2>}
-                                <div className="top-buttons-holder">
+                                <div className={`top-buttons-holder ${this.props.location.pathname === "/" ? 'is-on-homepage' : ''}`}>
                                     {this.props.location.pathname !== "/" &&
                                         <button className="go-back-btn" onClick={this.goBack}>
                                             <FontAwesomeIcon icon={faChevronLeft} className="go-back-icon" />
                                             Go back
                                     </button>}
-                                    {localStorage.getItem("isAuthenticated") === "true" && this.props.location.pathname !== "/" &&
-                                        <button className="logout-btn" onClick={this.logout}>
+                                    {localStorage.getItem("isAuthenticated") === "true" &&
+                                        <button className='logout-btn' onClick={this.logout}>
                                             <FontAwesomeIcon icon={faSignOutAlt} className="logout-icon" />
                                             Logout
                                     </button>}

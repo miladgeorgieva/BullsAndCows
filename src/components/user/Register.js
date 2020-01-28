@@ -41,6 +41,18 @@ class Register extends Component {
         if (this.state.usernameInput === "" || this.state.passwordInput === "" || this.state.confirmPasswordInput === "") {
             toast.error("Please, fill in every field");
         } else {
+            let usersArray = JSON.parse(localStorage.getItem('users').toString());
+            let user = usersArray.find(object => {
+                return object.username === this.state.usernameInput
+            });
+
+            console.log(user);
+
+            if (user !== undefined) {
+                toast.error("User with this username already exists");
+                return false;
+            }
+
             let usernameRegex = /^[0-9A-Za-z_.-]+$/;
             if (!usernameRegex.test(this.state.usernameInput)) {
                 toast.error("Your username can only consist of letters, digits, hyphens, underscores and periods");

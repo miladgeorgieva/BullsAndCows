@@ -51,6 +51,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  &.is-on-homepage {
+    justify-content: center;
+  }
 }
 
 .go-back-btn,
