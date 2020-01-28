@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { toast } from 'react-toastify';
 import Form from './Form';
 import ResultsBox from './ResultsBox';
 
-class NewGame extends React.Component {
+class NewGame extends Component {
   constructor(props) {
     super(props);
 
@@ -14,7 +14,9 @@ class NewGame extends React.Component {
       submitBtnIsDisabled: true,
       jokerBtnIsDisabled: false,
       currentInputIsNumber: false,
-      jokerBtnClickedCount: 0
+      jokerBtnClickedCount: 0,
+      initialPlayerPoints: 15,
+      playerJokerPoints: 0
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -44,17 +46,27 @@ class NewGame extends React.Component {
 
     let number = this.state.randomGeneratedNumber;
     let jokerClicksCount = this.state.jokerBtnClickedCount;
+
+    let points = (jokerClicksCount + 1) * (-5);
+    console.log(points);
+
+    const jokerPoints = points;
+
+    // Adding the "turn" object to the initial array of objects (playerResults)
+    const playerJokerPoints = jokerPoints;
+
     if (jokerClicksCount < 3) {
       jokerClicksCount++;
       if (jokerClicksCount === 3) {
-        toast.error("Haha, you have no jokers left!")
+        toast.error("Haha, you have no jokers left!");
         this.setState({
           jokerBtnIsDisabled: true
         });
       }
       this.setState({
         jokerBtnClickedCount: jokerClicksCount,
-        inputValue: number.substring(0, jokerClicksCount)
+        inputValue: number.substring(0, jokerClicksCount),
+        playerJokerPoints: playerJokerPoints
       });
     } else {
       return false;
@@ -80,7 +92,9 @@ class NewGame extends React.Component {
     }
 
     let index = this.state.playerResults.length;
+
     const turn = {
+      points: (index + 1) * 5,
       turnNumber: index++,
       number: this.state.inputValue,
       cows: this.countCows(),
@@ -93,8 +107,6 @@ class NewGame extends React.Component {
     this.setState({
       playerResults: playerResults,
       submitBtnIsDisabled: false
-    }, () => {
-      // console.log(this.state)
     });
   }
 
@@ -160,11 +172,14 @@ class NewGame extends React.Component {
 
   componentDidMount() {
     this.generateRandomNumber();
+    // if (localStorage.getItem('isAuthenticated') === "true") {
+
+    // }
   }
 
   render() {
     return (
-      <div id="new-game-holder">
+      <div id="game-holder">
         <Form
           inputValue={this.state.inputValue}
           inputValueArray={this.numberToArray(this.state.inputValue)}

@@ -45,3 +45,44 @@
     cursor: not-allowed;
   }
 }
+
+.top-buttons-holder {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.go-back-btn,
+.logout-btn {
+  background-color: transparent;
+  border: 0 none;
+  color: $secondary-text-color;
+  margin-bottom: 10px;
+  font-style: italic;
+  transition: 0.3s all;
+}
+
+.go-back-btn {
+  .go-back-icon {
+    margin-right: 10px;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    transform: translateX(-10px);
+  }
+}
+
+.logout-btn {
+  .logout-icon {
+    margin-right: 10px;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    transform: translateX(10px);
+  }
+}
