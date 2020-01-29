@@ -3,24 +3,5 @@
   overflow: auto;
   margin-top: 40px;
   padding: 20px;
-  background-color: rgba(225, 225, 225, 0.4);
-
-  .single-row {
-    color: $primary-text-color;
-    margin-bottom: 10px;
-    // text-align: center;
-
-    &:last-of-type {
-      margin-bottom: 0;
-    }
-  }
-
-  .given-number {
-    font-weight: 800;
-  }
-
-  .count-bulls-cows {
-    font-weight: 800;
-    color: rgb(188, 25, 25);
-  }
+  background-color: $box-transparent-grey;
 }

@@ -6,7 +6,7 @@
 
 .btn {
   &.primary-button {
-    background-color: rgb(20, 129, 147);
+    background-color: $blue;
     border: 0 none;
     border-radius: 40px;
     padding: 20px 60px;
@@ -14,18 +14,18 @@
     text-transform: uppercase;
 
     &.new-game {
-      background-color: rgb(213, 167, 0);
+      background-color: $yellow;
       margin: 10px;
     }
 
     &.top-scores {
-      background-color: rgb(12, 202, 115);
+      background-color: $mint-green;
       margin: 10px;
     }
   }
 
   &.secondary-button {
-    background-color: rgb(20, 129, 147);
+    background-color: $blue;
     border: 0 none;
     border-radius: 40px;
     padding: 10px 30px;
@@ -33,11 +33,11 @@
     text-transform: uppercase;
 
     &.joker {
-      background-color: rgb(185, 135, 7);
+      background-color: $yellow;
     }
 
     &.give-up {
-      background-color: rgb(188, 25, 25);
+      background-color: $red;
     }
   }
 

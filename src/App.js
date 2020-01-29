@@ -9,7 +9,7 @@ import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 import Register from './components/user/Register';
 import Homepage from './components/homepage/Homepage';
 import NewGame from './components/new-game/NewGame';
-import Highscore from './components/new-game/Highscore';
+import Highscore from './components/highscores/Highscore';
 import PrivateRoute from './components/PrivateRoute';
 import Login from './components/user/Login';
 
@@ -35,6 +35,10 @@ class App extends Component {
     componentDidMount() {
         if (localStorage.getItem("users") === null) {
             localStorage.setItem("users", JSON.stringify([]));
+        }
+
+        if (localStorage.getItem("scores") === null) {
+            localStorage.setItem("scores", JSON.stringify([]));
         }
     }
 

@@ -55,7 +55,7 @@ class Login extends Component {
                         localStorage.setItem('username', usernameInput);
                         localStorage.setItem('isAuthenticated', isAuthenticated);
 
-                        let { from } = { from: { pathname: "/" } };
+                        let { from } = this.props.location.state || { from: { pathname: "/new-game" } };
                         this.props.history.replace(from);
                     });
                 }

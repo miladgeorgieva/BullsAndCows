@@ -1,7 +1,7 @@
 import React from 'react';
 import SingleResultRow from './SingleResultRow';
 
-function resultsBox(props) {
+function ResultsBox(props) {
     return (
         <div id="results-box">
             <div className="single-row">
@@ -11,4 +11,4 @@ function resultsBox(props) {
     );
 }
 
-export default resultsBox;
+export default ResultsBox;

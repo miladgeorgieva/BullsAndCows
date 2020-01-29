@@ -5,7 +5,6 @@ import { toast } from 'react-toastify';
 class Register extends Component {
     constructor(props) {
         super(props);
-        // console.log('props', props)
 
         this.state = {
             usernameInput: '',
@@ -46,8 +45,6 @@ class Register extends Component {
                 return object.username === this.state.usernameInput
             });
 
-            console.log(user);
-
             if (user !== undefined) {
                 toast.error("User with this username already exists");
                 return false;
@@ -78,11 +75,14 @@ class Register extends Component {
                     users.push(
                         { 'username': usernameInput, 'password': passwordInput }
                     );
+
+                    // For the record, I know passwords must be hashed and definitely shouldn't be saved in browser storage
+                    // But for the sake of this game, I'll just use local storage
                     localStorage.setItem('users', JSON.stringify(users));
                     localStorage.setItem('username', usernameInput);
                     localStorage.setItem('isAuthenticated', isAuthenticated);
 
-                    let { from } = this.props.location.state || { from: { pathname: "/" } };
+                    let { from } = this.props.location.state || { from: { pathname: "/new-game" } };
                     this.props.history.replace(from);
                 });
             }

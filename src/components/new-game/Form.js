@@ -17,7 +17,7 @@ const Form = (props) => {
                 <button className={"btn secondary-button joker" +
                     (props.jokerBtnIsDisabled ? " disabled" : '')}
                     disabled={props.jokerBtnIsDisabled} onClick={props.onJokerClick}>Give me a joker</button>
-                <button className="btn secondary-button give-up">I give up</button>
+                <button className="btn secondary-button give-up" onClick={props.onGiveUpClick}>I give up</button>
             </div>
         </form>
     );
