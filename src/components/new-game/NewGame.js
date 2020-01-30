@@ -72,8 +72,6 @@ class NewGame extends Component {
         jokerBtnClickedCount: jokerClicksCount,
         inputValue: number.substring(0, jokerClicksCount),
         playerJokerPoints: playerJokerPoints
-      }, () => {
-        console.log('On joker button click: ', this.state)
       });
     } else {
       return false;
@@ -214,10 +212,9 @@ class NewGame extends Component {
   componentDidMount() {
     this.generateRandomNumber();
     if (this.state.isBlocking) {
-      window.onbeforeunload = undefined
-    }
-    if (this.state.isBlocking && window.location.path === '/new-game') {
-      window.onbeforeunload = () => true
+      window.onbeforeunload = undefined;
+    } else {
+      window.onbeforeunload = () => true;
     }
   }
 

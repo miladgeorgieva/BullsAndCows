@@ -1,11 +1,12 @@
-.buttons {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+// .buttons {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+// }
 
 .btn {
   &.primary-button {
+    width: 100%;
     background-color: $blue;
     border: 0 none;
     border-radius: 40px;
@@ -16,28 +17,61 @@
     &.new-game {
       background-color: $yellow;
       margin: 10px;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: $yellow-lighter;
+      }
     }
 
     &.top-scores {
       background-color: $mint-green;
       margin: 10px;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: $mint-green-lighter;
+      }
     }
   }
 
   &.secondary-button {
+    width: 100%;
     background-color: $blue;
     border: 0 none;
     border-radius: 40px;
     padding: 10px 30px;
-    color: rgb(255, 255, 255);
+    color: $secondary-text-color;
     text-transform: uppercase;
+
+    &.add-number {
+      &:hover:enabled,
+      &:active:enabled,
+      &:focus {
+        background-color: $blue-lighter;
+      }
+    }
 
     &.joker {
       background-color: $yellow;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: $yellow-lighter;
+      }
     }
 
     &.give-up {
       background-color: $red;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: $red-lighter;
+      }
     }
   }
 
