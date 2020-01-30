@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withRouter } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import { toast } from 'react-toastify';
 
 class Register extends Component {
@@ -77,7 +77,7 @@ class Register extends Component {
                     );
 
                     // For the record, I know passwords must be hashed and definitely shouldn't be saved in browser storage
-                    // But for the sake of this game, I'll just use local storage
+                    // But for the sake of this game, I'll just use local storage :D
                     localStorage.setItem('users', JSON.stringify(users));
                     localStorage.setItem('username', usernameInput);
                     localStorage.setItem('isAuthenticated', isAuthenticated);
@@ -138,10 +138,12 @@ class Register extends Component {
                         <button className="btn primary-button">Register</button>
                     </div>
                 </form>
+                <div className="register-login-reference">Already have an account?
+                    <Link to="/login"> Click here to log in.</Link>
+                </div>
             </div>
         );
     }
 }
 
-// export default Register;
 export default withRouter(Register);

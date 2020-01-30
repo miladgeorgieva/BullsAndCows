@@ -11,15 +11,13 @@ function HighscoresBox() {
     let currentUserResults = scores.filter(result => result.username === localStorage.username);
 
     let sortedAndSlicedArray = scores.sort(compare).slice(0, 25);
-    
+
     // Returns max timestamp
     function getUserMostRecentGame() {
         return currentUserResults.map((e) => { return e }).sort().reverse()[0];
     }
 
     let userMostRecentGame = getUserMostRecentGame();
-    console.log(userMostRecentGame)
-
 
     if (localStorage.getItem('isAuthenticated') === 'true') {
         if (userMostRecentGame.username === localStorage.getItem('username')) {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Rules(props) {
+function Rules() {
     return (
         <div id="rules-holder">
             <p>

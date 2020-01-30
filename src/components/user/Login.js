@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { withRouter, Link } from "react-router-dom";
 import { toast } from 'react-toastify';
 
-
 class Login extends Component {
     constructor(props) {
         super(props);
@@ -104,7 +103,7 @@ class Login extends Component {
                         <button className="btn primary-button">Login</button>
                     </div>
                 </form>
-                <div className="register-reference">You haven't registered yet?
+                <div className="register-login-reference">You haven't registered yet?
                     <Link to="/register"> Click here</Link>
                 </div>
             </div>
@@ -112,4 +111,3 @@ class Login extends Component {
     }
 }
 export default withRouter(Login);
-// export default Login;

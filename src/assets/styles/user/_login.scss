@@ -1,10 +1,12 @@
 #login-holder {
+  text-align: left;
   display: flex;
   flex-direction: column;
   width: 100%;
   background-color: rgba(235, 235, 235, 0.6);
   border-radius: 10px;
   padding: 30px;
+  margin-bottom: 20px;
 
   #login-form {
     padding: 30px 0;
