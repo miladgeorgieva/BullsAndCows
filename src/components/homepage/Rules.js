@@ -20,19 +20,18 @@ function Rules(props) {
                 Then, in turn, the player (You) tries to guess their opponent's number who gives the number of matches.
                 If the matching digits are in their right positions, they are "bulls", if in different positions, they are "cows".
             </p>
-            <p>Example:
+            <p>Example:</p>
             <ul>
-                    <li>
-                        Secret number: 4271
+                <li>
+                    Secret number: 4271
                 </li>
-                    <li>
-                        Your try: 1234
+                <li>
+                    Your try: 1234
                 </li>
-                    <li>
-                        Answer: 1 bull and 2 cows. (The bull is "2", the cows are "4" and "1".)
+                <li>
+                    Answer: 1 bull and 2 cows. (The bull is "2", the cows are "4" and "1".)
                 </li>
-                </ul>
-            </p>
+            </ul>
             <p>
                 The first one to reveal the other's secret number in the least number of guesses wins the game.
             </p>

@@ -23,7 +23,9 @@ body {
 }
 
 html,
-body {
+body,
+#root,
+#root > div {
   height: 100%;
 }
 
@@ -46,6 +48,7 @@ body {
       color: $secondary-text-color;
       text-transform: uppercase;
       text-align: center;
+      margin: 15px 0 20px 0;
     }
 
     .title {
@@ -58,22 +61,15 @@ body {
     }
   }
 
-  // .custom-container {
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
-  //   height: 100%;
-  //   overflow: hidden;
-  // }
-
-  #game-holder {
+  .game-holder {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 90%;
+    height: 80%;
     background-color: rgba(235, 235, 235, 0.6);
     border-radius: 10px;
     padding: 30px;
+    margin-bottom: 15px;
   }
 
   .single-row {
@@ -92,18 +88,23 @@ body {
       font-weight: 800;
       color: $red;
     }
+  }
 
-    &.last-game {
-      background-color: #f1dc1d87;
-      border-radius: 10px;
-      padding: 0 15px;
-    }
+  .last-game {
+    background-color: #f1dc1d87;
+    border-radius: 10px;
+    padding: 0 15px;
   }
 
   .no-scores {
     text-align: center;
     margin-top: 20px;
   }
+}
+
+.register-reference {
+  text-align: center;
+  margin-top: 15px;
 }
 
 #rules-holder {
@@ -114,13 +115,19 @@ body {
   background-color: rgba(235, 235, 235, 0.6);
   border-radius: 10px;
   padding: 30px;
+  margin-bottom: 15px;
   overflow-y: scroll;
+
+  ul {
+    margin-left: 15px;
+  }
 }
 
 .game-rules {
   color: $secondary-text-color;
   text-decoration: underline;
   transition: 0.3s all;
+  margin-bottom: 20px;
 
   &:hover,
   &:focus,
@@ -153,3 +160,5 @@ body {
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   background-color: $blue;
 }
+
+@import "responsive";

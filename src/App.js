@@ -49,44 +49,45 @@ class App extends Component {
 
     render() {
         return (
-            <div id="body-container">
-                <div className="game">
-                    <div className="game-inner-wrapper">
-                        <div className="container h-100">
-                            <div className="row h-100 pt-5 pb-5 justify-content-center">
-                                <div className="col-12 col-lg-8 h-100 d-flex flex-column justify-content-center align-items-center">
-                                    <h1 className="game-title">Bulls and Cows</h1>
-                                    {localStorage.getItem('isAuthenticated') === 'true' && this.props.location.pathname === "/" &&
-                                        <h2 className="title title-home-page">Hello, {localStorage.getItem('username')}</h2>}
-                                    <div className={`top-buttons-holder ${this.props.location.pathname === "/" ? 'is-on-homepage' : ''}`}>
-                                        {this.props.location.pathname !== "/" &&
-                                            <button className="go-back-btn" onClick={this.goBack}>
-                                                <FontAwesomeIcon icon={faChevronLeft} className="go-back-icon" />
-                                                Go back
+            // <div id="body-container">
+            <div className="game">
+                <div className="game-inner-wrapper">
+                    <div className="container h-100">
+                        <div className="row h-100 justify-content-center">
+                            <div className="col-12 col-lg-8 h-100 d-flex flex-column justify-content-center align-items-center">
+                                <h1 className="game-title">Bulls and Cows</h1>
+                                {localStorage.getItem('isAuthenticated') === 'true' && this.props.location.pathname === "/" &&
+                                    <h2 className="title title-home-page">Hello, {localStorage.getItem('username')}</h2>}
+                                <div className={`top-buttons-holder ${this.props.location.pathname === "/" ? 'is-on-homepage' : ''}`}>
+                                    {this.props.location.pathname !== "/" &&
+                                        <button className="go-back-btn" onClick={this.goBack}>
+                                            <FontAwesomeIcon icon={faChevronLeft} className="go-back-icon" />
+                                            Go back
                                     </button>}
-                                        {localStorage.getItem("isAuthenticated") === "true" &&
-                                            <button className='logout-btn' onClick={this.logout}>
-                                                <FontAwesomeIcon icon={faSignOutAlt} className="logout-icon" />
-                                                Logout
+                                    {localStorage.getItem("isAuthenticated") === "true" &&
+                                        <button className='logout-btn' onClick={this.logout}>
+                                            <FontAwesomeIcon icon={faSignOutAlt} className="logout-icon" />
+                                            Logout
                                     </button>}
-                                    </div>
-                                    {this.props.location.pathname === "/" && <Link to="/rules" className="game-rules">Game rules</Link>}
-                                    <Switch>
-                                        <Route path="/" exact render={() => <Homepage />} />
-                                        <PrivateRoute path="/new-game" exact > <NewGame /> </PrivateRoute>
-                                        <Route path="/highscore" exact render={() => <Highscore />} />
-                                        <Route path="/register" exact render={() => <Register />} />
-                                        <Route path="/login" exact render={() => <Login />} />
-                                        <Route path="/rules" exact render={() => <Rules />} />
-                                        <Route render={() => <Redirect to="/" />} />
-                                    </Switch>
                                 </div>
+                                {this.props.location.pathname === "/" && <Link to="/rules" className="game-rules">Game rules</Link>}
+                                <Switch>
+                                    <Route path="/" exact render={() => <Homepage />} />
+                                    <PrivateRoute path="/new-game" exact > <NewGame /> </PrivateRoute>
+                                    <Route path="/highscore" exact render={() => <Highscore />} />
+                                    <Route path="/register" exact render={() => <Register />} />
+                                    <Route path="/login" exact render={() => <Login />} />
+                                    <Route path="/rules" exact render={() => <Rules />} />
+                                    <Route render={() => <Redirect to="/" />} />
+                                </Switch>
                             </div>
                         </div>
                     </div>
                 </div>
                 <ToastContainer />
             </div>
+
+            // </div>
         )
     }
 }

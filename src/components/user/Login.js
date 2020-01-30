@@ -100,11 +100,11 @@ class Login extends Component {
                         />
                     </div>
 
-                    <div className="buttons mt-4">
+                    <div className="buttons mt-md-4">
                         <button className="btn primary-button">Login</button>
                     </div>
                 </form>
-                <div className="text-center">You haven't registered yet?
+                <div className="register-reference">You haven't registered yet?
                     <Link to="/register"> Click here</Link>
                 </div>
             </div>

@@ -134,7 +134,7 @@ class Register extends Component {
                         />
                     </div>
 
-                    <div className="buttons mt-4">
+                    <div className="buttons mt-md-4">
                         <button className="btn primary-button">Register</button>
                     </div>
                 </form>

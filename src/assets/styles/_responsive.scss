@@ -1,0 +1,105 @@
+// $breakpoint-mobile-xs: 481px;
+$breakpoint-mobile: 575px;
+$breakpoint-tablet: 767px;
+$breakpoint-laptop: 991px;
+
+@media (max-width: $breakpoint-tablet) {
+  .game {
+    .game-inner-wrapper {
+      .game-title {
+        font-size: 30px;
+      }
+
+      .title {
+        &.title-home-page {
+          font-size: 18px;
+        }
+      }
+    }
+
+    .game-holder {
+      padding: 15px;
+    }
+
+    .single-row {
+      font-size: 14px;
+    }
+  }
+
+  .go-back-btn,
+  .logout-btn {
+    font-size: 14px;
+  }
+
+  #results-box {
+    margin-top: 5px;
+    padding: 10px;
+  }
+
+  #rules-holder {
+    padding: 15px;
+    font-size: 14px;
+  }
+
+  #highscores-box {
+    padding: 10px;
+  }
+
+  // Login and register
+  #login-holder,
+  #register-holder {
+    padding: 15px;
+
+    #login-form,
+    #register-form {
+      padding: 10px 0;
+    }
+  }
+
+  .register-reference {
+    font-size: 14px;
+  }
+
+  // Buttons
+  .btn {
+    &.primary-button {
+      padding: 8px;
+    }
+
+    &.secondary-button {
+      margin: 4px 0;
+      padding: 6px;
+      font-size: 14px;
+    }
+  }
+
+  // Inputs
+  .custom-input-group {
+    margin-bottom: 4px;
+
+    label {
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+  }
+
+  .custom-form-control {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  // SweetAlert2
+  .swal2-popup {
+    #swal2-content {
+      font-size: 14px !important;
+    }
+
+    .swal2-title {
+      font-size: 24px !important;
+    }
+
+    .swal2-styled {
+      padding: 10px 20px !important;
+    }
+  }
+}
