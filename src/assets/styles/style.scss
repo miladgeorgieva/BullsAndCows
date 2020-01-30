@@ -29,6 +29,10 @@ body,
   height: 100%;
 }
 
+#root {
+  overflow-x: auto;
+}
+
 .game {
   height: 100vh;
   background-image: url("../images/game_bg.jpg");

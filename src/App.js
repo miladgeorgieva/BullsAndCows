@@ -53,7 +53,11 @@ class App extends Component {
             <div className="game">
                 <div className="game-inner-wrapper">
                     <div className="container h-100">
+<<<<<<< HEAD
                         <div className="row h-100 justify-content-center">
+=======
+                        <div className="row h-100 pt-5 pb-5 justify-content-center">
+>>>>>>> e8dcee7799acc356a7a2be19de2efc198101d805
                             <div className="col-12 col-lg-8 h-100 d-flex flex-column justify-content-center align-items-center">
                                 <h1 className="game-title">Bulls and Cows</h1>
                                 {localStorage.getItem('isAuthenticated') === 'true' && this.props.location.pathname === "/" &&
