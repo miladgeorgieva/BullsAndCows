@@ -220,7 +220,7 @@ class NewGame extends Component {
 
   render() {
     return (
-      <div id="game-holder">
+      <div className="game-holder">
         <Form
           inputValue={this.state.inputValue}
           inputValueArray={this.numberToArray(this.state.inputValue)}

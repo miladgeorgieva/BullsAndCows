@@ -14,20 +14,20 @@ const Form = (props) => {
             </div>
 
             <div className="row">
-                <div className="col-4">
+                <div className="col-12 col-md-4">
                     <button className={"btn secondary-button add-number" +
                         (props.inputValueArray.length !== 4 || !props.currentInputIsNumber ? " disabled" : '')}
                         disabled={props.inputValueArray.length !== 4 || !props.currentInputIsNumber}>
                         Submit number
                     </button>
                 </div>
-                <div className="col-4">
+                <div className="col-12 col-md-4">
                     <button className={"btn secondary-button joker" +
                         (props.jokerBtnIsDisabled ? " disabled" : '')}
                         disabled={props.jokerBtnIsDisabled} onClick={props.onJokerClick}>Give me a joker
                     </button>
                 </div>
-                <div className="col-4">
+                <div className="col-12 col-md-4">
                     <button className="btn secondary-button give-up" onClick={props.onGiveUpClick}>I give up</button>
                 </div>
             </div>

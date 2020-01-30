@@ -1,0 +1,66 @@
+// $breakpoint-mobile-xs: 481px;
+$breakpoint-mobile: 575px;
+$breakpoint-tablet: 767px;
+$breakpoint-laptop: 991px;
+
+@media (max-width: $breakpoint-mobile) {
+  .game {
+    height: auto;
+
+    .game-inner-wrapper {
+      height: auto;
+    }
+
+    .game-holder {
+      padding: 25px;
+      // height: 800px;
+    }
+
+    .single-row {
+      font-size: 14px;
+    }
+  }
+
+  #results-box {
+    margin-top: 25px;
+  }
+
+  // Buttons
+  .btn {
+    &.primary-button {
+      padding: 12px;
+    }
+
+    &.secondary-button {
+      margin: 8px 0;
+      padding: 8px;
+      font-size: 14px;
+    }
+  }
+
+  // Inputs
+  .custom-input-group {
+    label {
+      font-size: 16px;
+    }
+  }
+
+  .custom-form-control {
+    font-size: 14px;
+  }
+
+  // SweetAlert2
+  .swal2-popup {
+    #swal2-content {
+      font-size: 14px !important;
+    }
+
+    .swal2-title {
+      font-size: 24px !important;
+    }
+
+    .swal2-styled {
+      padding: 10px 20px !important;
+    }
+  }
+}

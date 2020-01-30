@@ -9,7 +9,7 @@ function Highscore(pops) {
     });
 
     return (
-        <div id="game-holder">
+        <div className="game-holder">
             <h2 className="title">Top 25 highscores</h2>
             <HighscoresBox />
         </div>

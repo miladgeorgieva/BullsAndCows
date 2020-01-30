@@ -16,7 +16,7 @@
 
     &.new-game {
       background-color: $yellow;
-      margin: 10px;
+      margin: 10px 0;
 
       &:hover,
       &:focus,
@@ -27,7 +27,7 @@
 
     &.top-scores {
       background-color: $mint-green;
-      margin: 10px;
+      margin: 10px 0;
 
       &:hover,
       &:focus,
